@@ -6,14 +6,23 @@ import java.sql.*;
  * @author Andrea
  *
  */
+/**
+ * @author Andrea
+ *
+ */
+/**
+ * @author Andrea
+ *
+ */
 public class modelo extends database {
 
 	public modelo() {
-		
+
 	}
 
 	/**
 	 * Creación de la base de datos
+	 * 
 	 * @return boolean
 	 * @throws SQLException
 	 */
@@ -26,7 +35,7 @@ public class modelo extends database {
 			st.executeUpdate("CREATE DATABASE IF NOT EXISTS T22");
 
 			// Drop tables
-			
+
 			st.executeUpdate("DROP TABLE IF EXISTS suministra;");
 			st.executeUpdate("DROP TABLE IF EXISTS piezas;");
 			st.executeUpdate("DROP TABLE IF EXISTS proveedores;");
@@ -58,6 +67,7 @@ public class modelo extends database {
 
 	/**
 	 * Isertar registros en las tablas
+	 * 
 	 * @return boolean
 	 */
 	public boolean insertValues() {
@@ -92,13 +102,13 @@ public class modelo extends database {
 		SQLException ex) {
 			System.out.println(ex.getMessage());
 		}
-		
+
 		return insertValues;
 	}
 
-	
 	/**
 	 * Elimina una tabla segun el parametro introducido
+	 * 
 	 * @param i
 	 * @return boolean
 	 * @throws SQLException
@@ -133,6 +143,7 @@ public class modelo extends database {
 
 	/**
 	 * Isertar registro en Piezas
+	 * 
 	 * @param id
 	 * @param pieza
 	 * @return boolean
@@ -144,7 +155,7 @@ public class modelo extends database {
 
 		try {
 			Statement st = this.getConexion().createStatement();
-			st.executeUpdate("INSERT INTO piezas VALUE ("+ (int) id + ", '" + pieza + "');");
+			st.executeUpdate("INSERT INTO piezas VALUE (" + (int) id + ", '" + pieza + "');");
 			insert = true;
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
@@ -153,9 +164,9 @@ public class modelo extends database {
 		return insert;
 	}
 
-
 	/**
 	 * Insertar registro en Proveedores
+	 * 
 	 * @param id
 	 * @param proveedor
 	 * @return boolean
@@ -167,7 +178,7 @@ public class modelo extends database {
 
 		try {
 			Statement st = this.getConexion().createStatement();
-			st.executeUpdate("INSERT INTO proveedores VALUE ('" +  id + "', '" + proveedor + "');");
+			st.executeUpdate("INSERT INTO proveedores VALUE ('" + id + "', '" + proveedor + "');");
 			insert = true;
 
 		} catch (SQLException ex) {
@@ -178,9 +189,9 @@ public class modelo extends database {
 
 	}
 
-
 	/**
 	 * Insertar registro en suministra
+	 * 
 	 * @param idPieza
 	 * @param idProveedor
 	 * @param precio
@@ -203,9 +214,9 @@ public class modelo extends database {
 
 	}
 
-	
 	/**
 	 * Mostrar tabla Piezas segun id o pieza
+	 * 
 	 * @param id
 	 * @param pieza
 	 * @return ResultSet
@@ -236,9 +247,9 @@ public class modelo extends database {
 		return rs;
 	}
 
-
 	/**
 	 * Mostrar tabla Proveedor segun id o preoveedor
+	 * 
 	 * @param id
 	 * @param proveedor
 	 * @return ResultSet
@@ -269,9 +280,9 @@ public class modelo extends database {
 		return rs;
 	}
 
-	
 	/**
 	 * Mostrar tabla Suministra segun idPieza, idProveedor o precio
+	 * 
 	 * @param idPieza
 	 * @param idProveedor
 	 * @param precio
@@ -308,9 +319,9 @@ public class modelo extends database {
 		return rs;
 	}
 
-	
 	/**
 	 * Mostrar la tabla Piezas
+	 * 
 	 * @return ResultSet
 	 * @throws SQLException
 	 */
@@ -332,6 +343,7 @@ public class modelo extends database {
 
 	/**
 	 * Mostrar la tabla Proveedores
+	 * 
 	 * @return ResultSet
 	 * @throws SQLException
 	 */
@@ -353,6 +365,7 @@ public class modelo extends database {
 
 	/**
 	 * Mostrar la tabla Suministra
+	 * 
 	 * @return ResultSet
 	 * @throws SQLException
 	 */
@@ -372,9 +385,9 @@ public class modelo extends database {
 		return rs;
 	}
 
-	
 	/**
 	 * Cambiar un campo de registro de la tabla Piezas
+	 * 
 	 * @param id
 	 * @param pieza
 	 * @return boolean
@@ -399,6 +412,7 @@ public class modelo extends database {
 
 	/**
 	 * Cambiar un campo de registro de la tabla Proveedor
+	 * 
 	 * @param id
 	 * @param pieza
 	 * @return boolean
@@ -422,6 +436,7 @@ public class modelo extends database {
 
 	/**
 	 * Cambiar un campo de registro de la tabla Suministra
+	 * 
 	 * @param id
 	 * @param pieza
 	 * @return boolean
@@ -443,9 +458,9 @@ public class modelo extends database {
 		return update;
 	}
 
-	
 	/**
 	 * Eliminar un registro de la tabla Piezas
+	 * 
 	 * @param id
 	 * @return boolean
 	 * @throws SQLException
@@ -457,7 +472,7 @@ public class modelo extends database {
 		try {
 
 			Statement st = this.getConexion().createStatement();
-			st.executeUpdate("DELETE FROM piezas1 WHERE codigo = " + id + ";");
+			st.executeUpdate("DELETE FROM piezas WHERE codigo = " + id + ";");
 			delete = true;
 
 		} catch (SQLException ex) {
@@ -470,6 +485,7 @@ public class modelo extends database {
 
 	/**
 	 * Eliminar un registro de la tabla Proveedor
+	 * 
 	 * @param id
 	 * @return boolean
 	 * @throws SQLException
@@ -492,6 +508,7 @@ public class modelo extends database {
 
 	/**
 	 * Eliminar un registro de la tabla Suministra
+	 * 
 	 * @param id
 	 * @return boolean
 	 * @throws SQLException
@@ -501,8 +518,8 @@ public class modelo extends database {
 
 		try {
 			Statement st = this.getConexion().createStatement();
-			st.executeUpdate(
-					"DELETE FROM suministra WHERE idproveedor = '" + idProveedor + "' or codigopiezas =" + idPieza + ";");
+			st.executeUpdate("DELETE FROM suministra WHERE idproveedor = '" + idProveedor + "' or codigopiezas ="
+					+ idPieza + ";");
 
 			delete = true;
 

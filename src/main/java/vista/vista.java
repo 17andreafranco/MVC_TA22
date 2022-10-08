@@ -37,7 +37,7 @@ public class vista {
 
 	public void crudTable() {
 
-		System.out.println("1. Añadir register");
+		System.out.println("1. Añadir registro");
 		System.out.println("2. Consultar por ID o nombre");
 		System.out.println("3. Listar registros");
 		System.out.println("4. Modificar registro");

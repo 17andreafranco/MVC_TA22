@@ -10,7 +10,7 @@ public class Main_TA22 {
 
 	public static void main(String[] args) throws SQLException {
 		
-		controlador ct = new controlador();
+		controladorConsola ct = new controladorConsola();
 		ct.start();
 			
 	}
